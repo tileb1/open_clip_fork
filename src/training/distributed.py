@@ -68,6 +68,7 @@ def init_distributed_device(args):
     args.rank = 0  # global rank
     args.local_rank = 0
     if args.horovod:
+        print('INITIALIZED VIA horovod')
         assert hvd is not None, "Horovod is not installed"
         hvd.init()
         args.local_rank = int(hvd.local_rank())
@@ -79,6 +80,7 @@ def init_distributed_device(args):
         os.environ['WORLD_SIZE'] = str(args.world_size)
     elif is_using_distributed():
         if 'SLURM_PROCID' in os.environ:
+            print('INITIALIZED VIA SLURM')
             # DDP via SLURM
             args.local_rank, args.rank, args.world_size = world_info_from_env()
             # SLURM var -> torch.distributed vars in case needed
@@ -92,6 +94,7 @@ def init_distributed_device(args):
                 rank=args.rank,
             )
         else:
+            print('INITIALIZED VIA SINGLE TORCHRUN')
             # DDP via torchrun, torch.distributed.launch
             args.local_rank, _, _ = world_info_from_env()
             torch.distributed.init_process_group(
