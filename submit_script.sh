@@ -6,7 +6,7 @@
 #SBATCH --gpus-per-node=8
 #SBATCH --mem=448GB
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=2
+#SBATCH --ntasks-per-node=8
 #SBATCH --open-mode=append
 #SBATCH --partition=standard-g
 #SBATCH --signal=USR2@120
@@ -55,7 +55,7 @@ python -u src/training/main.py \
     --report-to wandb \
     --train-data="/scratch/project_465000727/datasets/img2dataset/mscoco/{00000..00058}.tar" \
     --warmup 2000 \
-    --batch-size=256 \
+    --batch-size=512 \
     --epochs=32 \
     --workers=7 \
     --model ViT-B-32 \
@@ -63,4 +63,4 @@ python -u src/training/main.py \
     --seed 0 \
     --local-loss \
     --gather-with-grad \
-    --train-num-samples 100000
+    --train-num-samples 400000
