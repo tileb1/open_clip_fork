@@ -53,7 +53,7 @@ srun --unbuffered --output /scratch/project_465000727/repos/open_clip_fork/%j_%t
 python -u src/training/main.py \
     --save-frequency 1 \
     --report-to wandb \
-    --train-data="/scratch/project_465000727/datasets/img2dataset/mscoco500/{01040..01040}.tar" \
+    --train-data="/scratch/project_465000727/datasets/img2dataset/mscoco500/{00000..01100}.tar" \
     --warmup 2000 \
     --batch-size=512 \
     --epochs=32 \
