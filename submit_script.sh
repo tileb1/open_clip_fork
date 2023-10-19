@@ -43,6 +43,8 @@ export TORCH_DISTRIBUTED_DEBUG="DETAIL"
 
 master_addr=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 export MASTER_ADDR=$master_addr
+export MASTER_PORT=12802
+
 
 export PYTHONPATH="$PYTHONPATH:$PWD/src"
 srun --unbuffered python -u src/training/main.py \
