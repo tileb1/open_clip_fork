@@ -32,7 +32,6 @@ export NCCL_DEBUG=INFO
 export NCCL_SOCKET_IFNAME=hsn0,hsn1,hsn2,hsn3
 export NCCL_NET_GDR_LEVEL=3
 
-export FI_CXI_DISABLE_CQ_HUGETLB=1
 
   if [ $SLURM_LOCALID -eq 0 ] ; then
     ls /dev/shm/ | awk '!/data/' | xargs -i rm -rf  /dev/shm/{}
