@@ -55,7 +55,7 @@ python -u src/training/main.py \
     --report-to wandb \
     --train-data="/scratch/project_465000727/datasets/img2dataset/mscoco/{00000..00058}.tar" \
     --warmup 2000 \
-    --batch-size=512 \
+    --batch-size=1024 \
     --epochs=32 \
     --workers=7 \
     --model ViT-B-32 \
@@ -63,4 +63,5 @@ python -u src/training/main.py \
     --seed 0 \
     --local-loss \
     --gather-with-grad \
-    --train-num-samples 400000
+    --train-num-samples 400000 \
+    --log-every-n-steps 5
