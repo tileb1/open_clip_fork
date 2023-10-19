@@ -27,10 +27,10 @@ echo $PATH
 export MIOPEN_USER_DB_PATH=/tmp/${USER}-miopen-cache-${SLURM_JOB_ID}
 export MIOPEN_CUSTOM_CACHE_DIR=${MIOPEN_USER_DB_PATH}
 export SINGULARITYENV_NCCL_SOCKET_IFNAME=hsn0,hsn1,hsn2,hsn3
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
 export NCCL_DEBUG=INFO
 export NCCL_SOCKET_IFNAME=hsn0,hsn1,hsn2,hsn3
-export NCCL_NET_GDR_LEVEL=3
 
 
   if [ $SLURM_LOCALID -eq 0 ] ; then
