@@ -55,7 +55,7 @@ python -u src/training/main.py \
     --report-to wandb \
     --train-data="/scratch/project_465000727/datasets/img2dataset/mscoco/{00000..00058}.tar" \
     --warmup 2000 \
-    --batch-size=256 \
+    --batch-size=512 \
     --epochs=32 \
     --workers=7 \
     --model ViT-B-16 \
