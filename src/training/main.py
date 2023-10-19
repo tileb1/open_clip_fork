@@ -68,11 +68,6 @@ def get_latest_checkpoint(path: str, remote : bool):
 
 
 def main(args):
-    print('Will resnet now')
-    import torchvision.models
-    test_model = torchvision.models.__dict__['resnet50']().cuda(int(os.environ['SLURM_LOCALID']))
-    print(test_model(torch.rand(4, 3, 224, 224).cuda(int(os.environ['SLURM_LOCALID']))))
-
     args = parse_args(args)
 
     if torch.cuda.is_available():
