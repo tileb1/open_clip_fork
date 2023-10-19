@@ -5,7 +5,7 @@
 #SBATCH --exclusive
 #SBATCH --gpus-per-node=8
 #SBATCH --mem=448GB
-#SBATCH --nodes=4
+#SBATCH --nodes=16
 #SBATCH --ntasks-per-node=8
 #SBATCH --open-mode=append
 #SBATCH --partition=standard-g
@@ -64,4 +64,4 @@ python -u src/training/main.py \
     --local-loss \
     --gather-with-grad \
     --train-num-samples 400000 \
-    --log-every-n-steps 5
+    --log-every-n-steps 2
