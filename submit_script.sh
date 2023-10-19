@@ -6,7 +6,7 @@
 #SBATCH --gpus-per-node=8
 #SBATCH --mem=448GB
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=1
 #SBATCH --open-mode=append
 #SBATCH --partition=standard-g
 #SBATCH --signal=USR2@120
@@ -58,8 +58,8 @@ python -u src/training/main.py \
     --batch-size=1024 \
     --epochs=32 \
     --workers=7 \
-    --model ViT-B-32 \
-    --name "ViT-B-32-Vanilla" \
+    --model ViT-B-16 \
+    --name "ViT-B-16-Vanilla" \
     --seed 0 \
     --local-loss \
     --gather-with-grad \
