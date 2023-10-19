@@ -1,5 +1,4 @@
 #!/bin/bash
-#SBATCH --wait-all-nodes=1
 #SBATCH --job-name=open_clip
 #SBATCH --account=project_465000330
 #SBATCH --cpus-per-task=7
@@ -13,6 +12,10 @@
 #SBATCH --signal=USR2@120
 #SBATCH --time=60
 #SBATCH --wckey=submitit
+#SBATCH --output=/scratch/project_465000727/repos/open_clip_fork/%j_0_log.out
+#SBATCH --error=/scratch/project_465000727/repos/open_clip_fork/%j_0_log.err
+
+
 module load LUMI/22.08
 module load partition/G
 
