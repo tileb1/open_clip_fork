@@ -47,7 +47,8 @@ export MASTER_PORT=12802
 
 
 export PYTHONPATH="$PYTHONPATH:$PWD/src"
-srun --unbuffered python -u src/training/main.py \
+srun --unbuffered --output /scratch/project_465000727/repos/open_clip_fork/%j_%t_log.out --error /scratch/project_465000727/repos/open_clip_fork/%j_%t_log.err \
+python -u src/training/main.py \
     --save-frequency 1 \
     --report-to wandb \
     --train-data="/scratch/project_465000727/datasets/img2dataset/mscoco/{00000..00058}.tar" \
