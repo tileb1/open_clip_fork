@@ -59,4 +59,5 @@ srun --unbuffered python -u src/training/main.py \
     --name "ViT-B-32-Vanilla" \
     --seed 0 \
     --local-loss \
-    --gather-with-grad
+    --gather-with-grad \
+    --train-num-samples 100000
