@@ -6,7 +6,7 @@
 #SBATCH --gpus-per-node=8
 #SBATCH --mem=448GB
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=1
 #SBATCH --open-mode=append
 #SBATCH --partition=standard-g
 #SBATCH --signal=USR2@120
