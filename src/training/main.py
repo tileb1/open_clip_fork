@@ -294,10 +294,10 @@ def main(args):
             # this doesn't exist in older PyTorch, arg only added if enabled
             ddp_args['static_graph'] = True
         print('Device:', device)
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[device], **ddp_args)
+        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank], **ddp_args)
     
         if args.distill:
-            dist_model = torch.nn.parallel.DistributedDataParallel(dist_model, device_ids=[device], **ddp_args)
+            dist_model = torch.nn.parallel.DistributedDataParallel(dist_model, device_ids=[args.local_rank], **ddp_args)
 
     # create optimizer and scaler
     optimizer = None
