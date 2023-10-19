@@ -88,7 +88,7 @@ def init_distributed_device(args):
             os.environ['RANK'] = str(args.rank)
             os.environ['WORLD_SIZE'] = str(args.world_size)
             torch.distributed.init_process_group(
-                backend=args.dist_backend,
+                backend='nccl',
                 init_method=args.dist_url,
                 world_size=args.world_size,
                 rank=args.rank,
