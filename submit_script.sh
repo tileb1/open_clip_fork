@@ -47,7 +47,7 @@ master_addr=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 export MASTER_ADDR=$master_addr
 export MASTER_PORT=12802
 
-export PATH="/project/project_465000727/MMSegEnv/bin:$PATH"
+export PATH="/project/project_465000330/MMSegEnv/bin:$PATH"
 export PYTHONPATH="$PYTHONPATH:$PWD/src"
 srun --unbuffered --output /scratch/project_465000727/repos/open_clip_fork/%j_%t_log.out --error /scratch/project_465000727/repos/open_clip_fork/%j_%t_log.err \
 python -u src/training/main.py \
